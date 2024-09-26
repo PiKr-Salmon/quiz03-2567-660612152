@@ -7,7 +7,7 @@ export const GET = async (request: NextRequest) => {
   const RoomId = request.nextUrl.searchParams.get("roomId");
 
   readDB();
-  let findRoom = (<Database>DB).messages.find((x) => x.roomId === RoomId)
+  const findRoom = (<Database>DB).messages.find((x) => x.roomId === RoomId)
     if(!findRoom){
       return NextResponse.json(
         {
@@ -36,7 +36,7 @@ export const POST = async (request: NextRequest) => {
   const { roomId, messageText } = body;
   
   readDB();
-  let findRoom = (<Database>DB).messages.find((x) => x.roomId === roomId)
+  const findRoom = (<Database>DB).messages.find((x) => x.roomId === roomId)
     if(!findRoom){
       return NextResponse.json(
         {
