@@ -1,5 +1,5 @@
 import jwt from "jsonwebtoken";
-import { Database, DB, readDB, User } from "@lib/DB";
+import { Database, DB, readDB } from "@lib/DB";
 import { NextRequest, NextResponse } from "next/server";
 
 export const POST = async (request: NextRequest) => {
