@@ -60,7 +60,7 @@ export const POST = async (request: NextRequest) => {
     ok: true,
     messageId,
     message: "Message has been sent",
-  });
+  },{status : 200});
 };
 
 export const DELETE = async (request: NextRequest) => {

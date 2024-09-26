@@ -39,15 +39,6 @@ export const POST = async (request: NextRequest) => {
 
   const body = await request.json();
   const { roomName } = body;
-  if (typeof roomName !== "string" || roomName.length < 6) {
-    return NextResponse.json(
-      {
-        ok: false,
-        message: "roomName must contain 6 characters",
-      },
-      { status: 400 }
-    );
-  }
 
   readDB();
   //find if room exist 
